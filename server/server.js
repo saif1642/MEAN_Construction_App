@@ -8,7 +8,7 @@ const config = require('./config');
 
 const app = express();
 
-mongoose.connect(config.database,(err)=>{
+mongoose.connect(config.database,{ useNewUrlParser: true },(err)=>{
     if(err){
         console.log(err);
     }else{
@@ -21,12 +21,8 @@ app.use(bodyParser.urlencoded({ extended:false }));
 app.use(morgan('dev'));
 app.use(cors());
 
-app.get('/',(req,res,next)=>{
-    res.json({
-        user:'Jhon doe'
-    });
-})
-
+const userRoutes = require('./routes/account');
+app.use('/api/accounts',userRoutes);
 app.listen(config.port,err=>{
    console.log(`app started at port ${config.port}`);
 });
