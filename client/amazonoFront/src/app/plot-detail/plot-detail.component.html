@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>{{ plot.title }}</h1>
+  <dl class="list">
+    <dt>Name</dt>
+    <dd>{{ plot.name }}</dd>
+    <dt>Price</dt>
+    <dd>{{ plot.price }}</dd>
+    <dt>Note</dt>
+    <dd>{{ plot.note }}</dd>
+    <dt>Plot status</dt>
+    <dd>status</dd>
+    <dt>Owner Name</dt>
+    <dd>{{ plot.owner_name }}</dd>
+    <dt>Owner Phone</dt>
+    <dd>{{ plot.owner_phone }}</dd>
+  </dl>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/plot-edit', plot._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deletePlot(plot._id)">DELETE</button>
+  </div>
+</div>

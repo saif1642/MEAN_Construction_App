@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>plot List</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>price</th>
+        <th>construction_start_date</th>
+        <th>note</th>
+        <th>owner_name</th>
+        <th>owner_phone</th>
+        <th>Selling Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plot of plots">
+        <td>{{ plot.name }}</td>
+        <td>{{ plot.price }}</td>
+        <td>{{ plot.construction_start_date }}</td>
+        <td>{{ plot.note }}</td>
+        <td>{{ plot.owner_name }}</td>
+        <td>{{ plot.owner_phone }}</td>
+        <td> status </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h1>plot create
+  <a [routerLink]="['/book-create']" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
+</h1>
